@@ -1,5 +1,5 @@
 import { Service } from '@tsed/di';
-import { ExampleModel } from '@yame/types';
+import { ExampleModel } from '@zettelwirtschaft/types';
 
 @Service()
 export class ExampleService {

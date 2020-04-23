@@ -1,5 +1,5 @@
 {
-  "name": "@yame/backend",
+  "name": "@zettelwirtschaft/backend",
   "version": "1.0.0",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "@types/cors": "^2.8.6",
     "@types/compression": "^1.7.0",
     "@types/swagger-schema-official": "^2.0.21",
-    "@yame/types": "^1.0.0"
+    "@zettelwirtschaft/types": "^1.0.0"
   },
   "dependencies": {
     "@tsed/common": "^5.46.0",
@@ -32,6 +32,6 @@
     "express": "^4.17.1",
     "compression": "^1.7.4",
     "method-override": "^3.0.0",
-    "@yame/configuration": "^1.0.0"
+    "@zettelwirtschaft/configuration": "^1.0.0"
   }
 }

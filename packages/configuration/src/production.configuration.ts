@@ -1,4 +1,4 @@
-import { Configuration } from '@yame/types';
+import { Configuration } from '@zettelwirtschaft/types';
 
 const configuration: Configuration = {
   server: {

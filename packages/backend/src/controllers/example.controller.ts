@@ -1,6 +1,6 @@
 import { Controller, Get } from '@tsed/common';
 import { ReturnsArray } from '@tsed/swagger';
-import { ExampleModel } from '@yame/types';
+import { ExampleModel } from '@zettelwirtschaft/types';
 
 import { ExampleService } from '../services/example.service';
 

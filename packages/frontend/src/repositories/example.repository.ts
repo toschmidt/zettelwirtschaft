@@ -1,4 +1,4 @@
-import { ExampleModel } from '@yame/types';
+import { ExampleModel } from '@zettelwirtschaft/types';
 import { useGet, UseGetReturn } from 'restful-react';
 
 const apiPath = '/examples';

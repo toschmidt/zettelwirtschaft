@@ -1,5 +1,5 @@
 {
-  "name": "@yame/configuration",
+  "name": "@zettelwirtschaft/configuration",
   "version": "1.0.0",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -8,6 +8,6 @@
     "purge": "rimraf node_modules/"
   },
   "dependencies": {
-    "@yame/types": "^1.0.0"
+    "@zettelwirtschaft/types": "^1.0.0"
   }
 }

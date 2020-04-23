@@ -1,7 +1,7 @@
 {
-  "name": "yet-another-monorepo-example",
+  "name": "zettelwirtschaft",
   "version": "1.0.0",
-  "description": "Monorepo template for a fullstack TypeScript application based on React and Express.",
+  "description": "Note management system based on React and Express.",
   "author": "Tobias Schmidt <tobias.schmidt@in.tum.de>",
   "private": true,
   "workspaces": [

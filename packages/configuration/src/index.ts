@@ -1,4 +1,4 @@
-import { Configuration } from '@yame/types';
+import { Configuration } from '@zettelwirtschaft/types';
 
 import devConfig from './development.configuration';
 import prodConfig from './production.configuration';

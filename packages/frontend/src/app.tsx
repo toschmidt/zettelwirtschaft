@@ -1,4 +1,4 @@
-import { getBaseConfiguration } from '@yame/configuration';
+import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { RestfulProvider } from 'restful-react';

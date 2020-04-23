@@ -1,4 +1,4 @@
-import { ExampleModel } from '@yame/types';
+import { ExampleModel } from '@zettelwirtschaft/types';
 import * as React from 'react';
 
 import { useGetExamples } from '../repositories/example.repository';

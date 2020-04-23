@@ -1,7 +1,7 @@
-import { bootstrap } from '@yame/backend';
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+import { bootstrap } from '@zettelwirtschaft/backend';
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
