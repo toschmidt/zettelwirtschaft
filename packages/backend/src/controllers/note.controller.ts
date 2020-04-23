@@ -21,10 +21,7 @@ export class NoteController {
 
   @Get('/')
   @ReturnsArray(Note)
-  get(
-    @Required() @QueryParams('labelId') labelId: string,
-    @QueryParams('searchString') searchString?: string,
-  ): Promise<Note[]> {
+  get(@Required() @QueryParams('labelId') labelId: string): Promise<Note[]> {
     return this.noteService.findByLabelId(new ObjectId(labelId));
   }
 

@@ -21,7 +21,7 @@ export class Note {
   @Description('Label assigned to the note (can be undefined)')
   @Required()
   @Ref(Label)
-  label!: Ref<Label>;
+  label!: Label | ObjectId;
 
   @Description('Note tags')
   @Required()

@@ -7,11 +7,11 @@ import { ObjectId } from 'mongodb';
 export class NoteService {
   constructor(@Inject(Note) private noteModel: MongooseModel<Note>) {}
 
-  async findByLabelId(labelId?: ObjectId): Promise<Note[]> {
+  findByLabelId(labelId?: ObjectId): Promise<Note[]> {
     return this.noteModel.find({ label: labelId }).exec();
   }
 
-  async createNote(note: Note): Promise<Note> {
+  createNote(note: Note): Promise<Note> {
     note._id = undefined;
     note.createdAt = new Date();
     note.updatedAt = new Date();
@@ -37,7 +37,7 @@ export class NoteService {
   async listTags(): Promise<string[]> {
     const notes: Note[] = await this.noteModel.find().exec();
     return notes.reduce((tags: string[], note: Note) => {
-      return tags.concat(note.tags.filter(tag => !tags.includes(tag)));
+      return tags.concat(note.tags.filter((tag) => !tags.includes(tag)));
     }, []);
   }
 }
