@@ -18,6 +18,7 @@
     "@types/compression": "^1.7.0",
     "@types/mongodb": "^3.5.10",
     "@types/mongoose": "^5.7.12",
+    "@types/swagger-schema-official": "^2.0.20",
     "@zettelwirtschaft/types": "^1.0.0"
   },
   "dependencies": {
