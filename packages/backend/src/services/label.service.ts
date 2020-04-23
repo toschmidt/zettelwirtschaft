@@ -15,7 +15,7 @@ export class LabelService {
     return (await this.labelModel.findById(labelId).exec())!;
   }
 
-  async createLabel(label: Label): Promise<Label> {
+  createLabel(label: Label): Promise<Label> {
     label._id = undefined;
     return new this.labelModel(label).save();
   }
