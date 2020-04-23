@@ -19,7 +19,11 @@
     "backend:start": "lerna run backend:start --stream",
     "frontend:serve": "lerna run frontend:serve --stream",
     "electron:start": "lerna run electron:start --stream",
-    "electron:serve": "lerna run electron:serve --stream"
+    "electron:serve": "lerna run electron:serve --stream",
+    "mongodb:up": "docker-compose -f mongodb/docker-mongodb.yml up",
+    "mongodb:down": "docker-compose -f mongodb/docker-mongodb.yml down",
+    "mongoku:up": "docker-compose -f mongodb/docker-mongoku.yml up",
+    "mongoku:down": "docker-compose -f mongodb/docker-mongoku.yml down"
   },
   "devDependencies": {
     "lerna": "^3.20.2",
