@@ -8,6 +8,9 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import methodOverride from 'method-override';
 import * as path from 'path';
+import { LabelController } from './controllers/label.controller';
+import { NoteController } from './controllers/note.controller';
+import { TagController } from './controllers/tags.controller';
 
 const rootDir = __dirname;
 const clientDir = path.join(rootDir, '../../frontend/bundle');
@@ -23,7 +26,7 @@ const config: Configuration = getBaseConfiguration();
     requestFields: ['method', 'url'],
   },
   mount: {
-    '/rest': [],
+    '/rest': [LabelController, NoteController, TagController],
   },
   swagger: [
     {
