@@ -13,6 +13,7 @@ import {
 import { Returns, ReturnsArray } from '@tsed/swagger';
 import { Note } from '@zettelwirtschaft/types';
 import { ObjectId } from 'mongodb';
+
 import { NoteService } from '../services/note.service';
 
 @Controller('/notes')

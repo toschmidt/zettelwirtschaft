@@ -2,6 +2,7 @@ import { Default, Format, PropertyType, Required } from '@tsed/common';
 import { Model, ObjectID, Ref } from '@tsed/mongoose';
 import { Description } from '@tsed/swagger';
 import { ObjectId } from 'mongodb';
+
 import { Label } from './label.model';
 
 @Model()

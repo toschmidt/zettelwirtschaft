@@ -1,5 +1,6 @@
 import { Controller, Get } from '@tsed/common';
 import { ReturnsArray } from '@tsed/swagger';
+
 import { NoteService } from '../services/note.service';
 
 @Controller('/tags')
