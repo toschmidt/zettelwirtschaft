@@ -1,6 +1,5 @@
-import '@tsed/swagger';
-
 import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
+import '@tsed/swagger';
 import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
 import { Configuration } from '@zettelwirtschaft/types';
 import * as bodyParser from 'body-parser';
@@ -9,8 +8,6 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import methodOverride from 'method-override';
 import * as path from 'path';
-
-import { ExampleController } from './controllers/example.controller';
 
 const rootDir = __dirname;
 const clientDir = path.join(rootDir, '../../frontend/bundle');
@@ -26,7 +23,7 @@ const config: Configuration = getBaseConfiguration();
     requestFields: ['method', 'url'],
   },
   mount: {
-    '/rest': [ExampleController],
+    '/rest': [],
   },
   swagger: [
     {
