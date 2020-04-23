@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  mongoku:
+    image: huggingface/mongoku:latest
+    container_name: mongoku
+    restart: always
+    environment:
+      MONGOKU_DEFAULT_HOST: mongodb://mongodb:27017
+    ports:
+      - 3100:3100
