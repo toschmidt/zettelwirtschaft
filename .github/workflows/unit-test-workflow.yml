@@ -1,0 +1,25 @@
+name: unit-tests
+
+on: push
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: yarn install
+        run: 'yarn bootstrap'
+
+      - name: eslint
+        run: 'yarn lint'
+
+      - name: yarn build
+        run: 'yarn build'

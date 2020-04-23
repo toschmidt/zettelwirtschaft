@@ -1,0 +1,13 @@
+{
+  "name": "@yame/configuration",
+  "version": "1.0.0",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/ tsconfig.tsbuildinfo",
+    "purge": "rimraf node_modules/"
+  },
+  "dependencies": {
+    "@yame/types": "^1.0.0"
+  }
+}

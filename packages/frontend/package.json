@@ -1,0 +1,23 @@
+{
+  "name": "@yame/frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rimraf bundle/ dist/ tsconfig.tsbuildinfo",
+    "purge": "rimraf node_modules",
+    "build": "webpack --color --config webpack.prod.js",
+    "frontend:serve": "webpack-dev-server --color --hot --progress --config webpack.dev.js"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/lodash": "^4.14.149",
+    "@types/qs": "^6.9.1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "restful-react": "^11.2.0",
+    "@yame/configuration": "^1.0.0",
+    "@yame/types": "^1.0.0"
+  }
+}

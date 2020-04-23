@@ -1,0 +1,19 @@
+{
+  "name": "@yame/electron",
+  "version": "1.0.0",
+  "private": true,
+  "scriptsPrependNodePath": false,
+  "scripts": {
+    "clean": "rimraf dist/ tsconfig.tsbuildinfo",
+    "purge": "rimraf node_modules",
+    "electron:start": "electron dist/main.js",
+    "electron:serve": "nodemon --watch * --exec 'electron dist/main.js --serve'"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.6"
+  },
+  "dependencies": {
+    "electron": "^8.2.3",
+    "@yame/backend": "^1.0.0"
+  }
+}

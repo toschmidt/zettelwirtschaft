@@ -1,0 +1,37 @@
+{
+  "name": "@yame/backend",
+  "version": "1.0.0",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/ tsconfig.tsbuildinfo",
+    "purge": "rimraf node_modules",
+    "backend:start": "env NODE_ENV=production node dist/main.js",
+    "backend:serve": "env NODE_ENV=development nodemon dist/main.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.11.1",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/method-override": "^0.0.31",
+    "@types/cors": "^2.8.6",
+    "@types/compression": "^1.7.0",
+    "@types/swagger-schema-official": "^2.0.21",
+    "@yame/types": "^1.0.0"
+  },
+  "dependencies": {
+    "@tsed/common": "^5.46.0",
+    "@tsed/core": "^5.46.0",
+    "@tsed/di": "^5.46.0",
+    "@tsed/swagger": "^5.46.0",
+    "@tsed/testing": "^5.46.0",
+    "ts-httpexceptions": "^4.1.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "compression": "^1.7.4",
+    "method-override": "^3.0.0",
+    "@yame/configuration": "^1.0.0"
+  }
+}
