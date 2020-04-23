@@ -1,8 +1,8 @@
 import '@tsed/swagger';
 
 import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
-import { getBaseConfiguration } from '@yame/configuration';
-import { Configuration } from '@yame/types';
+import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
+import { Configuration } from '@zettelwirtschaft/types';
 import * as bodyParser from 'body-parser';
 import compress from 'compression';
 import cookieParser from 'cookie-parser';
