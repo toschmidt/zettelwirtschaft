@@ -1,1 +1,2 @@
-export * from './example.model';
+export * from './label.model';
+export * from './note.model';

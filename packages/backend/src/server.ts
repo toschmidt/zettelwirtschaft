@@ -10,7 +10,9 @@ import cors from 'cors';
 import methodOverride from 'method-override';
 import * as path from 'path';
 
-import { ExampleController } from './controllers/example.controller';
+import { LabelController } from './controllers/label.controller';
+import { NoteController } from './controllers/note.controller';
+import { TagController } from './controllers/tag.controller';
 
 const rootDir = __dirname;
 const clientDir = path.join(rootDir, '../../frontend/bundle');
@@ -26,7 +28,7 @@ const config: Configuration = getBaseConfiguration();
     requestFields: ['method', 'url'],
   },
   mount: {
-    '/rest': [ExampleController],
+    '/rest': [LabelController, NoteController, TagController],
   },
   swagger: [
     {

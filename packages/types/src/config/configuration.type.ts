@@ -4,4 +4,7 @@ export type Configuration = {
     https: boolean;
     log: boolean;
   };
+  mongodb: {
+    url: string;
+  };
 };

@@ -6,6 +6,9 @@ const configuration: Configuration = {
     https: false,
     log: true,
   },
+  mongodb: {
+    url: 'mongodb://localhost:27017/zettelwirtschaft',
+  },
 };
 
 export default configuration;
