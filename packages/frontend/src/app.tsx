@@ -26,7 +26,7 @@ const AppComponent = () => {
   console.log('.AppComponent(): ' + baseConfiguration.server.port);
 
   return (
-    <RestfulProvider base={`http://localhost:${baseConfiguration.server.port}/api`}>
+    <RestfulProvider base={`http://localhost:${baseConfiguration.server.port}/rest`}>
       <MuiThemeProvider theme={createMuiTheme(theme)}>
         <CssBaseline />
         <ErrorBoundaryComponent>
