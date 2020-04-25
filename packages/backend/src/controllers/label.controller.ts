@@ -22,8 +22,8 @@ export class LabelController {
   }
 
   @Put('/')
-  @Status(201)
   @Returns(Label)
+  @Status(201)
   create(@Required() @BodyParams() label: Label): Promise<Label> {
     return this.labelService.createLabel(label);
   }

@@ -26,14 +26,15 @@ export class NoteController {
   }
 
   @Put('/')
-  @Status(201)
   @Returns(Note)
+  @Status(201)
   create(@Required() @BodyParams() note: Note): Promise<Note> {
     return this.noteService.createNote(note);
   }
 
   @Post('/:noteId')
   @Returns(Note)
+  @Status(200)
   update(@Required() @PathParams('noteId') noteId: string, @Required() @BodyParams() note: Note): Promise<Note> {
     return this.noteService.updateNote(noteId, note);
   }
