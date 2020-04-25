@@ -11,7 +11,8 @@ import SaveIcon from '@material-ui/icons/Save';
 import { Autocomplete } from '@material-ui/lab';
 import { Label, Note } from '@zettelwirtschaft/types';
 import React, { ChangeEvent } from 'react';
-import { UseMutateReturn } from 'restful-react';
+import { GetDataError, MutateMethod } from 'restful-react';
+
 import { useGetLabels } from '../repositories/label.repository';
 import { useGetTags } from '../repositories/tag.repository';
 import { ErrorDialog } from './snackbar.dialog';
@@ -37,7 +38,9 @@ const useStyles = makeStyles((theme: Theme) => {
 });
 
 export interface NoteDialogProps {
-  useMutation: () => UseMutateReturn<Note, string, Note>;
+  mutate: MutateMethod<Note, Note, void>;
+  loading: boolean;
+  error: GetDataError<unknown> | null | undefined;
   onSave: (note: Note) => void;
   onCancel: () => void;
   note?: Note;
@@ -46,7 +49,7 @@ export interface NoteDialogProps {
 
 export const NoteDialog = (props: NoteDialogProps) => {
   const classes = useStyles();
-  const { useMutation, onSave, onCancel, note, label: currentLabel } = props;
+  const { mutate, error, onSave, onCancel, note, label: currentLabel } = props;
 
   const { data: availableLabels } = useGetLabels();
   const { data: availableTags } = useGetTags();
@@ -79,7 +82,7 @@ export const NoteDialog = (props: NoteDialogProps) => {
       };
 
       setCloseError(false);
-      putNote(note).then((savedNote: Note) => {
+      mutate(note).then((savedNote: Note) => {
         reset();
         onSave(savedNote);
       });

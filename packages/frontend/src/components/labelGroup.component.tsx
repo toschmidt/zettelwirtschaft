@@ -14,7 +14,7 @@ import {
 import { NoteDialog } from '../dialogs/note.dialog';
 import { SuccessDialog } from '../dialogs/snackbar.dialog';
 import { useGetLabels } from '../repositories/label.repository';
-import { usePutNote } from '../repositories/note.repository';
+import { NoteControllerCreate } from '../repositories/note.repository';
 import { LabelComponent } from './label.component';
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -74,15 +74,21 @@ export const LabelGroupComponent = () => {
       </div>
 
       {noteDialogOpen && (
-        <NoteDialog
-          useMutation={usePutNote}
-          onSave={() => {
-            setNoteDialogOpen(false);
-            setSuccessMessage('Created new note!');
-            refetch();
-          }}
-          onCancel={() => setNoteDialogOpen(false)}
-        />
+        <NoteControllerCreate>
+          {(mutate, { loading, error }): React.ReactElement => (
+            <NoteDialog
+              mutate={mutate}
+              loading={loading}
+              error={error}
+              onSave={(): void => {
+                setNoteDialogOpen(false);
+                setSuccessMessage('Created new note!');
+                refetch();
+              }}
+              onCancel={(): void => setNoteDialogOpen(false)}
+            />
+          )}
+        </NoteControllerCreate>
       )}
 
       <SuccessDialog open={!!successMessage} onClose={() => setSuccessMessage(null)} message={successMessage || ''} />

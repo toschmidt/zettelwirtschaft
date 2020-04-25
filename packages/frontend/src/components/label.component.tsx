@@ -6,7 +6,7 @@ import { ConfirmationDialog } from '../dialogs/confirmation.dialog';
 import { NoteDialog } from '../dialogs/note.dialog';
 import { SuccessDialog } from '../dialogs/snackbar.dialog';
 import useWindowDimensions from '../hooks/useWindowDimensions.hook';
-import { useDeleteNote, useGetNotes, usePostNote } from '../repositories/note.repository';
+import { NoteControllerDelete, NoteControllerUpdate, useGetNotes } from '../repositories/note.repository';
 import { NoteComponent } from './note.component';
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -67,33 +67,45 @@ export const LabelComponent = (props: LabelProps) => {
       </GridList>
 
       {editNote && (
-        <NoteDialog
-          useMutation={() => usePostNote(editNote._id!)}
-          onSave={() => {
-            setEditNote(null);
-            setSuccessMessage('Updated note!');
-            refetch();
-          }}
-          onCancel={() => setEditNote(null)}
-          note={editNote}
-          label={label}
-        />
+        <NoteControllerUpdate noteId={editNote._id!}>
+          {(mutate, { loading, error }): React.ReactElement => (
+            <NoteDialog
+              mutate={mutate}
+              loading={loading}
+              error={error}
+              onSave={(): void => {
+                setEditNote(null);
+                setSuccessMessage('Updated note!');
+                refetch();
+              }}
+              onCancel={(): void => setEditNote(null)}
+              note={editNote}
+              label={label}
+            />
+          )}
+        </NoteControllerUpdate>
       )}
 
       {deleteNote && (
-        <ConfirmationDialog
-          useMutation={() => useDeleteNote(deleteNote._id!)}
-          onConfirm={() => {
-            setDeleteNote(null);
-            setSuccessMessage('Deleted note!');
-            refetch();
-          }}
-          onCancel={() => setDeleteNote(null)}
-          type="DELETE"
-          title={'Delete Note?'}
-        >
-          <Typography>Are you sure you want to delete this note?</Typography>
-        </ConfirmationDialog>
+        <NoteControllerDelete>
+          {(mutate, { loading, error }): React.ReactElement => (
+            <ConfirmationDialog
+              mutate={() => mutate(deleteNote._id!)}
+              loading={loading}
+              error={error}
+              onConfirm={(): void => {
+                setDeleteNote(null);
+                setSuccessMessage('Deleted note!');
+                refetch();
+              }}
+              onCancel={(): void => setDeleteNote(null)}
+              type="DELETE"
+              title={'Delete Note?'}
+            >
+              <Typography>Are you sure you want to delete this note?</Typography>
+            </ConfirmationDialog>
+          )}
+        </NoteControllerDelete>
       )}
 
       <SuccessDialog open={!!successMessage} onClose={() => setSuccessMessage(null)} message={successMessage || ''} />

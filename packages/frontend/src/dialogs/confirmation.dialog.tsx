@@ -34,7 +34,9 @@ const useStyles = makeStyles((theme: Theme) => {
 });
 
 export interface ConfirmationDialogProps {
-  useMutation: () => UseMutateReturn<void, string, string>;
+  mutate: MutateMethod<void, string, void>;
+  loading: boolean;
+  error: GetDataError<unknown> | null | undefined;
   onConfirm: () => void;
   onCancel: () => void;
   type: 'CONFIRM' | 'DELETE';
@@ -44,9 +46,7 @@ export interface ConfirmationDialogProps {
 
 export const ConfirmationDialog = (props: ConfirmationDialogProps) => {
   const classes = useStyles();
-  const { useMutation, onConfirm, onCancel, type, title, children } = props;
-
-  const { mutate, error } = useMutation();
+  const { mutate, error, onConfirm, onCancel, type, title, children } = props;
 
   const [closeError, setCloseError] = React.useState(false);
 
