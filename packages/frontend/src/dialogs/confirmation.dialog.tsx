@@ -8,7 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
 import DeleteIcon from '@material-ui/icons/Delete';
 import React, { ReactElement } from 'react';
-import { UseMutateReturn } from 'restful-react';
+import { GetDataError, MutateMethod } from 'restful-react';
+
 import { ErrorDialog } from './snackbar.dialog';
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -44,13 +45,13 @@ export interface ConfirmationDialogProps {
   children: ReactElement;
 }
 
-export const ConfirmationDialog = (props: ConfirmationDialogProps) => {
+export const ConfirmationDialog = (props: ConfirmationDialogProps): React.ReactElement => {
   const classes = useStyles();
   const { mutate, error, onConfirm, onCancel, type, title, children } = props;
 
   const [closeError, setCloseError] = React.useState(false);
 
-  const confirm = () => {
+  const confirm = (): void => {
     setCloseError(false);
     mutate('').then(() => {
       onConfirm();
@@ -79,7 +80,7 @@ export const ConfirmationDialog = (props: ConfirmationDialogProps) => {
         </DialogActions>
       </Dialog>
 
-      {error && <ErrorDialog open={!closeError} onClose={() => setCloseError(true)} message={error.data} />}
+      {error && <ErrorDialog open={!closeError} onClose={(): void => setCloseError(true)} message={`${error.data}`} />}
     </div>
   );
 };

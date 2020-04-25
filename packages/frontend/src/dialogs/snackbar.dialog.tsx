@@ -8,12 +8,9 @@ export interface SnackbarDialogProps {
   message: string;
 }
 
-export const ErrorDialog = (props: SnackbarDialogProps) => SnackbarDialog({ ...props, type: 'error' });
-export const WarningDialog = (props: SnackbarDialogProps) => SnackbarDialog({ ...props, type: 'warning' });
-export const InfoDialog = (props: SnackbarDialogProps) => SnackbarDialog({ ...props, type: 'info' });
-export const SuccessDialog = (props: SnackbarDialogProps) => SnackbarDialog({ ...props, type: 'success' });
-
-const SnackbarDialog = (props: SnackbarDialogProps & { type: 'error' | 'warning' | 'info' | 'success' }) => {
+const SnackbarDialog = (
+  props: SnackbarDialogProps & { type: 'error' | 'warning' | 'info' | 'success' },
+): React.ReactElement => {
   const { open, onClose, type, message } = props;
 
   return (
@@ -24,3 +21,15 @@ const SnackbarDialog = (props: SnackbarDialogProps & { type: 'error' | 'warning'
     </Snackbar>
   );
 };
+
+export const ErrorDialog = (props: SnackbarDialogProps): React.ReactElement =>
+  SnackbarDialog({ ...props, type: 'error' });
+
+export const WarningDialog = (props: SnackbarDialogProps): React.ReactElement =>
+  SnackbarDialog({ ...props, type: 'warning' });
+
+export const InfoDialog = (props: SnackbarDialogProps): React.ReactElement =>
+  SnackbarDialog({ ...props, type: 'info' });
+
+export const SuccessDialog = (props: SnackbarDialogProps): React.ReactElement =>
+  SnackbarDialog({ ...props, type: 'success' });

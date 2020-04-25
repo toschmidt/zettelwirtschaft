@@ -44,7 +44,7 @@ export interface TitleBarProps {
   readonly toggleThemeColor: () => void;
 }
 
-export const TitleBarComponent = (props: TitleBarProps) => {
+export const TitleBarComponent = (props: TitleBarProps): React.ReactElement => {
   const classes = useStyles();
   const { themeColor, toggleThemeColor } = props;
 

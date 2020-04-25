@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => {
   });
 });
 
-export const LabelGroupComponent = () => {
+export const LabelGroupComponent = (): React.ReactElement => {
   const classes = useStyles();
   const [noteDialogOpen, setNoteDialogOpen] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState<string | null>(null);
@@ -68,7 +68,7 @@ export const LabelGroupComponent = () => {
         <Fab color="primary" size={'medium'} className={classes.fab}>
           <EditIcon />
         </Fab>
-        <Fab color="primary" size={'medium'} className={classes.fab} onClick={() => setNoteDialogOpen(true)}>
+        <Fab color="primary" size={'medium'} className={classes.fab} onClick={(): void => setNoteDialogOpen(true)}>
           <AddIcon />
         </Fab>
       </div>
@@ -91,7 +91,11 @@ export const LabelGroupComponent = () => {
         </NoteControllerCreate>
       )}
 
-      <SuccessDialog open={!!successMessage} onClose={() => setSuccessMessage(null)} message={successMessage || ''} />
+      <SuccessDialog
+        open={!!successMessage}
+        onClose={(): void => setSuccessMessage(null)}
+        message={successMessage || ''}
+      />
     </>
   );
 };

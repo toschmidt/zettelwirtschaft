@@ -1,14 +1,14 @@
-import { withStyles } from '@material-ui/core';
+import { Theme, withStyles } from '@material-ui/core';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 
-export const CustomExpansionPanel = withStyles(theme => ({
+export const CustomExpansionPanel = withStyles((theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
     boxShadow: 'none',
     '&:before': {
-        display: 'none',
+      display: 'none',
     },
     '&$expanded': {
       margin: 'auto',
@@ -17,7 +17,7 @@ export const CustomExpansionPanel = withStyles(theme => ({
   expanded: {},
 }))(MuiExpansionPanel);
 
-export const CustomExpansionPanelSummary = withStyles(theme => ({
+export const CustomExpansionPanelSummary = withStyles((theme: Theme) => ({
   root: {
     borderBottom: `1px solid ${theme.palette.divider}`,
     padding: '0px 4px',
@@ -39,7 +39,7 @@ export const CustomExpansionPanelSummary = withStyles(theme => ({
   expanded: {},
 }))(MuiExpansionPanelSummary);
 
-export const CustomExpansionPanelDetails = withStyles(theme => ({
+export const CustomExpansionPanelDetails = withStyles(() => ({
   root: {
     paddingTop: 0,
     paddingBottom: 0,

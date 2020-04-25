@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => {
     description: {
       paddingBottom: theme.spacing(0.5),
       whiteSpace: 'pre-line',
-      wordBreak: 'break-word'
+      wordBreak: 'break-word',
     },
     chips: {},
     chip: {
@@ -54,7 +54,7 @@ export interface NoteProps {
   deleteNote: (note: Note) => void;
 }
 
-export const NoteComponent = (props: NoteProps) => {
+export const NoteComponent = (props: NoteProps): React.ReactElement => {
   const classes = useStyles();
   const { note, editNote, deleteNote } = props;
   const { title, description, updatedAt, tags } = note;
@@ -62,20 +62,20 @@ export const NoteComponent = (props: NoteProps) => {
   const [showMenuIcon, setShowMenuIcon] = React.useState(false);
   const [menuAnchor, setMenuAnchor] = React.useState<null | HTMLElement>(null);
 
-  const openMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const openMenu = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setMenuAnchor(event.currentTarget);
   };
 
-  const closeMenu = () => {
+  const closeMenu = (): void => {
     setMenuAnchor(null);
   };
 
-  const menuEdit = () => {
+  const menuEdit = (): void => {
     closeMenu();
     editNote(note);
   };
 
-  const menuDelete = () => {
+  const menuDelete = (): void => {
     closeMenu();
     deleteNote(note);
   };
@@ -84,8 +84,8 @@ export const NoteComponent = (props: NoteProps) => {
     <>
       <Card
         className={classes.card}
-        onMouseEnter={() => setShowMenuIcon(true)}
-        onMouseLeave={() => setShowMenuIcon(false)}
+        onMouseEnter={(): void => setShowMenuIcon(true)}
+        onMouseLeave={(): void => setShowMenuIcon(false)}
       >
         <CardHeader
           className={classes.cardHeader}

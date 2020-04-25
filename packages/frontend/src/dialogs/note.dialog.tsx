@@ -47,14 +47,12 @@ export interface NoteDialogProps {
   label?: Label;
 }
 
-export const NoteDialog = (props: NoteDialogProps) => {
+export const NoteDialog = (props: NoteDialogProps): React.ReactElement => {
   const classes = useStyles();
   const { mutate, error, onSave, onCancel, note, label: currentLabel } = props;
 
   const { data: availableLabels } = useGetLabels();
   const { data: availableTags } = useGetTags();
-
-  const { mutate: putNote, error } = useMutation();
 
   const [title, setTitle] = React.useState(note?.title);
   const [description, setDescription] = React.useState(note?.description);
@@ -63,14 +61,14 @@ export const NoteDialog = (props: NoteDialogProps) => {
 
   const [closeError, setCloseError] = React.useState(false);
 
-  const reset = () => {
+  const reset = (): void => {
     setTitle(undefined);
     setDescription(undefined);
     setLabel(undefined);
     setTags([]);
   };
 
-  const save = () => {
+  const save = (): void => {
     if (title && description && label) {
       const note: Note = {
         title: title,
@@ -89,7 +87,7 @@ export const NoteDialog = (props: NoteDialogProps) => {
     }
   };
 
-  const cancel = () => {
+  const cancel = (): void => {
     reset();
     onCancel();
   };
@@ -107,7 +105,7 @@ export const NoteDialog = (props: NoteDialogProps) => {
             label="Title"
             defaultValue={title}
             className={classes.width100}
-            onChange={event => setTitle(event.target.value)}
+            onChange={(event): void => setTitle(event.target.value)}
           />
           <TextField
             multiline
@@ -117,19 +115,19 @@ export const NoteDialog = (props: NoteDialogProps) => {
             label="Description"
             defaultValue={description}
             className={classes.width100}
-            onChange={event => setDescription(event.target.value)}
+            onChange={(event): void => setDescription(event.target.value)}
           />
           <Autocomplete
             autoHighlight
             id="label"
             options={availableLabels || []}
-            getOptionLabel={(label: Label) => label.name}
-            getOptionSelected={(option: Label, value: Label) => option._id === value._id}
+            getOptionLabel={(label: Label): string => label.name}
+            getOptionSelected={(option: Label, value: Label): boolean => option._id === value._id}
             defaultValue={currentLabel}
-            renderInput={params => (
+            renderInput={(params): React.ReactElement => (
               <TextField {...params} error={!label} label="Label" margin="normal" className={classes.width100} />
             )}
-            onChange={(event: ChangeEvent<{}>, value: Label | null) => setLabel(value || undefined)}
+            onChange={(_: ChangeEvent<{}>, value: Label | null): void => setLabel(value || undefined)}
           />
           <Autocomplete
             multiple
@@ -137,10 +135,10 @@ export const NoteDialog = (props: NoteDialogProps) => {
             id="tags"
             options={availableTags || []}
             defaultValue={tags}
-            renderInput={params => (
+            renderInput={(params): React.ReactElement => (
               <TextField {...params} variant="standard" label="Tags" margin="normal" className={classes.width100} />
             )}
-            onChange={(event, value) => setTags(value)}
+            onChange={(_, value): void => setTags(value)}
           />
         </DialogContent>
         <DialogActions className={classes.dialogActions}>
@@ -153,7 +151,7 @@ export const NoteDialog = (props: NoteDialogProps) => {
         </DialogActions>
       </Dialog>
 
-      {error && <ErrorDialog open={!closeError} onClose={() => setCloseError(true)} message={error.data} />}
+      {error && <ErrorDialog open={!closeError} onClose={(): void => setCloseError(true)} message={`${error.data}`} />}
     </div>
   );
 };

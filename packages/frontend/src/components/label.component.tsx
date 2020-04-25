@@ -1,4 +1,4 @@
-import { createStyles, GridList, GridListTile, makeStyles, Theme, Typography } from '@material-ui/core';
+import { createStyles, GridList, GridListTile, makeStyles, Typography } from '@material-ui/core';
 import { Label, Note } from '@zettelwirtschaft/types';
 import * as React from 'react';
 
@@ -9,7 +9,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions.hook';
 import { NoteControllerDelete, NoteControllerUpdate, useGetNotes } from '../repositories/note.repository';
 import { NoteComponent } from './note.component';
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
   return createStyles({
     gridList: {
       // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
@@ -30,7 +30,7 @@ export interface LabelProps {
   label: Label;
 }
 
-export const LabelComponent = (props: LabelProps) => {
+export const LabelComponent = (props: LabelProps): React.ReactElement => {
   const classes = useStyles();
   const { label } = props;
   const { width } = useWindowDimensions();
@@ -108,7 +108,11 @@ export const LabelComponent = (props: LabelProps) => {
         </NoteControllerDelete>
       )}
 
-      <SuccessDialog open={!!successMessage} onClose={() => setSuccessMessage(null)} message={successMessage || ''} />
+      <SuccessDialog
+        open={!!successMessage}
+        onClose={(): void => setSuccessMessage(null)}
+        message={successMessage || ''}
+      />
     </>
   );
 };
