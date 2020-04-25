@@ -23,9 +23,6 @@ const AppComponent = (): React.ReactElement => {
   const baseConfiguration = getBaseConfiguration();
   const [theme, toggleDarkMode] = useDarkMode();
 
-  console.log(createMuiTheme(theme));
-  console.log('.AppComponent(): ' + baseConfiguration.server.port);
-
   return (
     <RestfulProvider base={`http://localhost:${baseConfiguration.server.port}/rest`}>
       <MuiThemeProvider theme={createMuiTheme(theme)}>
