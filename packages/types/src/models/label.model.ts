@@ -1,13 +1,12 @@
 import { Required } from '@tsed/common';
 import { Indexed, Model, ObjectID, Unique } from '@tsed/mongoose';
 import { Description } from '@tsed/swagger';
-import { ObjectId } from 'mongodb';
 
 @Model()
 export class Label {
   @Description('ObjectID of the note in the MongoDB')
   @ObjectID()
-  _id?: ObjectId;
+  _id?: string;
 
   @Description('Label name')
   @Required()

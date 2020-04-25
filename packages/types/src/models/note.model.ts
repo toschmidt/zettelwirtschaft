@@ -1,7 +1,6 @@
 import { Default, Format, PropertyType, Required } from '@tsed/common';
 import { Model, ObjectID, Ref } from '@tsed/mongoose';
 import { Description } from '@tsed/swagger';
-import { ObjectId } from 'mongodb';
 
 import { Label } from './label.model';
 
@@ -9,7 +8,7 @@ import { Label } from './label.model';
 export class Note {
   @Description('ObjectID of the note in the MongoDB')
   @ObjectID()
-  _id?: ObjectId;
+  _id?: string;
 
   @Description('Note title')
   @Required()
@@ -22,7 +21,7 @@ export class Note {
   @Description('Label assigned to the note (can be undefined)')
   @Required()
   @Ref(Label)
-  label!: Label | ObjectId;
+  label!: Ref<Label>;
 
   @Description('Note tags')
   @Required()

@@ -12,7 +12,6 @@ import {
 } from '@tsed/common';
 import { Returns, ReturnsArray } from '@tsed/swagger';
 import { Note } from '@zettelwirtschaft/types';
-import { ObjectId } from 'mongodb';
 
 import { NoteService } from '../services/note.service';
 
@@ -23,7 +22,7 @@ export class NoteController {
   @Get('/')
   @ReturnsArray(Note)
   get(@Required() @QueryParams('labelId') labelId: string): Promise<Note[]> {
-    return this.noteService.findByLabelId(new ObjectId(labelId));
+    return this.noteService.findByLabelId(labelId);
   }
 
   @Put('/')
@@ -36,12 +35,12 @@ export class NoteController {
   @Post('/:noteId')
   @Returns(Note)
   update(@Required() @PathParams('noteId') noteId: string, @Required() @BodyParams() note: Note): Promise<Note> {
-    return this.noteService.updateNote(new ObjectId(noteId), note);
+    return this.noteService.updateNote(noteId, note);
   }
 
   @Delete('/:noteId')
   @Status(204)
   delete(@Required() @PathParams('noteId') noteId: string): Promise<void> {
-    return this.noteService.deleteNote(new ObjectId(noteId));
+    return this.noteService.deleteNote(noteId);
   }
 }
