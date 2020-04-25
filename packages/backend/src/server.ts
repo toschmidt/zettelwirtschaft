@@ -1,6 +1,5 @@
-import '@tsed/swagger';
-
 import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
+import '@tsed/swagger';
 import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
 import { Configuration } from '@zettelwirtschaft/types';
 import * as bodyParser from 'body-parser';
@@ -29,6 +28,9 @@ const config: Configuration = getBaseConfiguration();
   },
   mount: {
     '/rest': [LabelController, NoteController, TagController],
+  },
+  mongoose: {
+    url: 'mongodb://localhost:27017/zettelwirtschaft',
   },
   swagger: [
     {
