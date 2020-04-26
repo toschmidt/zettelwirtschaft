@@ -90,7 +90,7 @@ export const LabelComponent = (props: LabelProps): React.ReactElement => {
         <NoteControllerDelete>
           {(mutate, { loading, error }): React.ReactElement => (
             <ConfirmationDialog
-              mutate={() => mutate(deleteNote._id!)}
+              mutate={(): Promise<void> => mutate(deleteNote._id!)}
               loading={loading}
               error={error}
               onConfirm={(): void => {

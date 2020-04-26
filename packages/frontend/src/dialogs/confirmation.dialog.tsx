@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => {
 });
 
 export interface ConfirmationDialogProps {
-  mutate: MutateMethod<void, string, void>;
+  mutate: MutateMethod<void, void, void>;
   loading: boolean;
   error: GetDataError<unknown> | null | undefined;
   onConfirm: () => void;
@@ -53,7 +53,7 @@ export const ConfirmationDialog = (props: ConfirmationDialogProps): React.ReactE
 
   const confirm = (): void => {
     setCloseError(false);
-    mutate('').then(() => {
+    mutate().then(() => {
       onConfirm();
     });
   };
