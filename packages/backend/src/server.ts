@@ -1,5 +1,6 @@
-import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
 import '@tsed/swagger';
+
+import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
 import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
 import { Configuration } from '@zettelwirtschaft/types';
 import * as bodyParser from 'body-parser';
