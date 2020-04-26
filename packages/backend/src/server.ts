@@ -30,6 +30,9 @@ const config: Configuration = getBaseConfiguration();
   mount: {
     '/rest': [LabelController, NoteController, TagController],
   },
+  mongoose: {
+    url: 'mongodb://localhost:27017/zettelwirtschaft',
+  },
   swagger: [
     {
       path: '/docs',

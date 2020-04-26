@@ -1,13 +1,12 @@
 import { Inject, Service } from '@tsed/di';
 import { MongooseModel } from '@tsed/mongoose';
 import { Note } from '@zettelwirtschaft/types';
-import { ObjectId } from 'mongodb';
 
 @Service()
 export class NoteService {
   constructor(@Inject(Note) private noteModel: MongooseModel<Note>) {}
 
-  findByLabelId(labelId?: ObjectId): Promise<Note[]> {
+  findByLabelId(labelId?: string): Promise<Note[]> {
     return this.noteModel.find({ label: labelId }).exec();
   }
 
@@ -18,7 +17,7 @@ export class NoteService {
     return new this.noteModel(note).save();
   }
 
-  async updateNote(noteId: ObjectId, note: Note): Promise<Note> {
+  async updateNote(noteId: string, note: Note): Promise<Note> {
     const oldNote = await this.noteModel.findById(noteId).exec();
 
     oldNote!.title = note.title;
@@ -30,7 +29,7 @@ export class NoteService {
     return oldNote!.save();
   }
 
-  async deleteNote(noteId: ObjectId): Promise<void> {
+  async deleteNote(noteId: string): Promise<void> {
     await this.noteModel.findByIdAndDelete(noteId).exec();
   }
 
