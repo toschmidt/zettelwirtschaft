@@ -1,5 +1,5 @@
 {
-  "name": "@yame/frontend",
+  "name": "@zettelwirtschaft/frontend",
   "version": "1.0.0",
   "scripts": {
     "clean": "rimraf bundle/ dist/ tsconfig.tsbuildinfo",
@@ -14,10 +14,13 @@
     "@types/qs": "^6.9.1"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "restful-react": "^11.2.0",
-    "@yame/configuration": "^1.0.0",
-    "@yame/types": "^1.0.0"
+    "@zettelwirtschaft/configuration": "^1.0.0",
+    "@zettelwirtschaft/types": "^1.0.0"
   }
 }

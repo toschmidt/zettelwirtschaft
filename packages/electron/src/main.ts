@@ -1,4 +1,4 @@
-import { bootstrap } from '@yame/backend';
+import { bootstrap } from '@zettelwirtschaft/backend';
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';

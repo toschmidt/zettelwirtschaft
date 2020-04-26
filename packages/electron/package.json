@@ -1,5 +1,5 @@
 {
-  "name": "@yame/electron",
+  "name": "@zettelwirtschaft/electron",
   "version": "1.0.0",
   "private": true,
   "scriptsPrependNodePath": false,
@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "electron": "^8.2.3",
-    "@yame/backend": "^1.0.0"
+    "@zettelwirtschaft/backend": "^1.0.0"
   }
 }

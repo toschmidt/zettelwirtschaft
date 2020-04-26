@@ -1,5 +1,5 @@
 {
-  "name": "@yame/backend",
+  "name": "@zettelwirtschaft/backend",
   "version": "1.0.0",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -16,12 +16,15 @@
     "@types/method-override": "^0.0.31",
     "@types/cors": "^2.8.6",
     "@types/compression": "^1.7.0",
-    "@types/swagger-schema-official": "^2.0.21",
-    "@yame/types": "^1.0.0"
+    "@types/mongodb": "^3.5.10",
+    "@types/mongoose": "^5.7.12",
+    "@types/swagger-schema-official": "^2.0.20",
+    "@zettelwirtschaft/types": "^1.0.0"
   },
   "dependencies": {
     "@tsed/common": "^5.46.0",
     "@tsed/core": "^5.46.0",
+    "@tsed/mongoose": "^5.46.0",
     "@tsed/di": "^5.46.0",
     "@tsed/swagger": "^5.46.0",
     "@tsed/testing": "^5.46.0",
@@ -32,6 +35,8 @@
     "express": "^4.17.1",
     "compression": "^1.7.4",
     "method-override": "^3.0.0",
-    "@yame/configuration": "^1.0.0"
+    "mongodb": "^3.5.6",
+    "mongoose": "^5.9.10",
+    "@zettelwirtschaft/configuration": "^1.0.0"
   }
 }

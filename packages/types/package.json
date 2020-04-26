@@ -1,15 +1,21 @@
 {
-  "name": "@yame/types",
+  "name": "@zettelwirtschaft/types",
   "version": "1.0.0",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf dist/ node_modules/ tsconfig.tsbuildinfo",
+    "clean": "rimraf dist/ tsconfig.tsbuildinfo",
     "purge": "rimraf node_modules"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/mongodb": "^3.5.10",
+    "@types/mongoose": "^5.7.12"
+  },
   "dependencies": {
+    "mongodb": "^3.5.6",
+    "mongoose": "^5.9.10",
     "@tsed/swagger": "^5.46.0",
+    "@tsed/mongoose": "^5.46.0",
     "@tsed/common": "^5.46.0"
   }
 }

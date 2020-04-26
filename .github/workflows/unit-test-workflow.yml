@@ -18,8 +18,8 @@ jobs:
       - name: yarn install
         run: 'yarn bootstrap'
 
-      - name: eslint
-        run: 'yarn lint'
-
       - name: yarn build
         run: 'yarn build'
+
+      - name: eslint
+        run: 'yarn lint'

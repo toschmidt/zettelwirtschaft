@@ -1,8 +1,8 @@
 import '@tsed/swagger';
 
 import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
-import { getBaseConfiguration } from '@yame/configuration';
-import { Configuration } from '@yame/types';
+import { getBaseConfiguration } from '@zettelwirtschaft/configuration';
+import { Configuration } from '@zettelwirtschaft/types';
 import * as bodyParser from 'body-parser';
 import compress from 'compression';
 import cookieParser from 'cookie-parser';
@@ -10,7 +10,9 @@ import cors from 'cors';
 import methodOverride from 'method-override';
 import * as path from 'path';
 
-import { ExampleController } from './controllers/example.controller';
+import { LabelController } from './controllers/label.controller';
+import { NoteController } from './controllers/note.controller';
+import { TagController } from './controllers/tag.controller';
 
 const rootDir = __dirname;
 const clientDir = path.join(rootDir, '../../frontend/bundle');
@@ -26,7 +28,10 @@ const config: Configuration = getBaseConfiguration();
     requestFields: ['method', 'url'],
   },
   mount: {
-    '/rest': [ExampleController],
+    '/rest': [LabelController, NoteController, TagController],
+  },
+  mongoose: {
+    url: 'mongodb://localhost:27017/zettelwirtschaft',
   },
   swagger: [
     {
