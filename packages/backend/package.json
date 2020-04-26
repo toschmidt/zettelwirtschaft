@@ -16,8 +16,8 @@
     "@types/method-override": "^0.0.31",
     "@types/cors": "^2.8.6",
     "@types/compression": "^1.7.0",
-    "@types/mongodb": "^3.5.10",
-    "@types/mongoose": "^5.7.12",
+    "@types/mongodb": "^3.5.11",
+    "@types/mongoose": "^5.7.13",
     "@types/swagger-schema-official": "^2.0.20",
     "@zettelwirtschaft/types": "^1.0.0"
   },
