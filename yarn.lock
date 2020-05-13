@@ -1068,14 +1068,14 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tsed/common@^5.46.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@tsed/common/-/common-5.49.0.tgz#6c8490f0af2ec29257d99c6f23b428653d146314"
-  integrity sha512-p1vuc5U2nN2PUQxCxYnY1VoBwL0y3TUcdgeUcE3FnKIYpPCyQ4ncuhKorkshreAgAwPKK8sK+XoYdaePyfdsPA==
+"@tsed/common@^5.53.0":
+  version "5.53.0"
+  resolved "https://registry.yarnpkg.com/@tsed/common/-/common-5.53.0.tgz#704d9a6d6223b356752053a15148abec2f00e0db"
+  integrity sha512-FT+7Up0srwWU7CMJknR/dWn/Sise04Z3tzJY0atPwJTyoGFIgvajm42IDzZVK5mVdmlo2OSJo21e8nkrJLfX1A==
   dependencies:
-    "@tsed/core" "5.49.0"
-    "@tsed/di" "5.49.0"
-    "@tsed/exceptions" "5.49.0"
+    "@tsed/core" "5.53.0"
+    "@tsed/di" "5.53.0"
+    "@tsed/exceptions" "5.53.0"
     "@tsed/logger" "^5.4.1"
     "@types/json-schema" "^7.0.3"
     globby "11.0.0"
@@ -1087,28 +1087,28 @@
     tslib "1.11.1"
     uuid "3.3.3"
 
-"@tsed/core@5.49.0", "@tsed/core@^5.46.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@tsed/core/-/core-5.49.0.tgz#fb24d8063e2a3f6887b3581c25c3bf1cff9cb48f"
-  integrity sha512-nPXZ5bhxh3qzArHZKUuuU5FiUL7K6i8ZFgpYg6hBKi/OB2j/olyKpnaupfHoLWezX/F3q0nx++omTI3hk1MiRg==
+"@tsed/core@5.53.0", "@tsed/core@^5.46.0":
+  version "5.53.0"
+  resolved "https://registry.yarnpkg.com/@tsed/core/-/core-5.53.0.tgz#92a7ecc4e92359d8c7384b1ec53140dd7ab6e00a"
+  integrity sha512-q7CPwmUAFqKWR1hhQji6rxV1pGdZt65WfUcrQUmF1aTI1VUiaNaFynhpaOXCgz+Nbbmezb/SPzEEimTULQcS8w==
   dependencies:
     reflect-metadata "^0.1.13"
     source-map-support "0.5.16"
     tslib "1.11.1"
 
-"@tsed/di@5.49.0", "@tsed/di@^5.46.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@tsed/di/-/di-5.49.0.tgz#3752f1c886b059b274e48388b01fda342c2a6eb5"
-  integrity sha512-6IZo3m4OUI+u/TtEbxhiYVtj2i9/mJWteWtDvCl3NqNJT3OkFot+7Cu/hcJNq7ZvxtQnTTsnj+5IIPkk19FxxA==
+"@tsed/di@5.53.0", "@tsed/di@^5.46.0":
+  version "5.53.0"
+  resolved "https://registry.yarnpkg.com/@tsed/di/-/di-5.53.0.tgz#61155b7cbfe8655d7418dccea9a6bec196464768"
+  integrity sha512-ADszL1apaJpAsqXrNKmdtknmdjbWIHKfgEBl+aMQhLg0uGvJuffaVjxGKiz6fNg7q9Bvs7gd3XUrT6fNIGJwEg==
   dependencies:
-    "@tsed/core" "5.49.0"
+    "@tsed/core" "5.53.0"
     chalk "3.0.0"
     tslib "1.11.1"
 
-"@tsed/exceptions@5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@tsed/exceptions/-/exceptions-5.49.0.tgz#afe84e73b6e91e43826b106d06d952671da0c0de"
-  integrity sha512-i5p/h95EA6aFnFUzSfJ+FxEN/hRvchNItq0TrgdcSRrqoPsQEfhrm4RQ6ZpimSG7V1iIKusbnD4o6g0cchBwsA==
+"@tsed/exceptions@5.53.0":
+  version "5.53.0"
+  resolved "https://registry.yarnpkg.com/@tsed/exceptions/-/exceptions-5.53.0.tgz#fe67eb9bbdf2ce4a3b4802a92a9dd35d1a565abd"
+  integrity sha512-P01GLPexMn1BH4ByTUK4xDPb++P2MqxUaHtCACs2pXB44OITkxghLhZwdqNlEo7O6pmLxpizGoal5nF028iapg==
   dependencies:
     tslib "1.11.1"
 
