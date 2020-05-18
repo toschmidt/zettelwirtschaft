@@ -17,7 +17,7 @@
     "@types/cors": "^2.8.6",
     "@types/compression": "^1.7.0",
     "@types/mongodb": "^3.5.11",
-    "@types/mongoose": "^5.7.13",
+    "@types/mongoose": "^5.7.20",
     "@types/swagger-schema-official": "^2.0.20",
     "@zettelwirtschaft/types": "^1.0.0"
   },
