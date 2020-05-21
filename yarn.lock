@@ -1139,10 +1139,10 @@
     swagger-ui-dist "^3.25.0"
     tslib "1.11.1"
 
-"@tsed/testing@^5.46.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@tsed/testing/-/testing-5.49.0.tgz#94ed565c99b2b2d37b4df3717197a0fa19206fde"
-  integrity sha512-C5moukhTRa13fnsYCoOtf41+NDPhskaU4NBYbm3Od0ox29PPAhLBkpAF42hfKqX9FwY0zT+n0Wmh4734TUiLJg==
+"@tsed/testing@^5.54.3":
+  version "5.54.3"
+  resolved "https://registry.yarnpkg.com/@tsed/testing/-/testing-5.54.3.tgz#6a7c9ab9e09ce2ab75218512d01315b98ffdb089"
+  integrity sha512-/wRY6nrw1Aa/nncfdJTlNsIHTn+oicrXHpDDubq6FZaFz2ItKQ6b/Z3C8rs6mY/DwInGCbSQ9651VpdUmwOBYw==
   dependencies:
     tslib "1.11.1"
 
