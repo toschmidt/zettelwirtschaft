@@ -8,7 +8,7 @@
     "purge": "rimraf node_modules"
   },
   "devDependencies": {
-    "@types/mongodb": "^3.5.11",
+    "@types/mongodb": "^3.5.20",
     "@types/mongoose": "^5.7.13"
   },
   "dependencies": {
