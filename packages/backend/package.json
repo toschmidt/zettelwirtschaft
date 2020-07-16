@@ -25,7 +25,7 @@
     "@tsed/common": "^5.46.0",
     "@tsed/core": "^5.46.0",
     "@tsed/mongoose": "^5.46.0",
-    "@tsed/di": "^5.46.0",
+    "@tsed/di": "^5.60.7",
     "@tsed/swagger": "^5.46.0",
     "@tsed/testing": "^5.46.0",
     "ts-httpexceptions": "^4.1.0",
