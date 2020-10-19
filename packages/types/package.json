@@ -16,6 +16,6 @@
     "mongoose": "^5.9.10",
     "@tsed/swagger": "^5.46.0",
     "@tsed/mongoose": "^5.46.0",
-    "@tsed/common": "^5.46.0"
+    "@tsed/common": "^6.0.0"
   }
 }
