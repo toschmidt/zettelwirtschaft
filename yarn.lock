@@ -1268,10 +1268,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/mongodb@*", "@types/mongodb@^3.5.11":
-  version "3.5.11"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.11.tgz#d1acc167695a2d732aa1e44d3c97a1ab2b8f0431"
-  integrity sha512-6bivRWckqvxybjhTljWEhSp/b2Z96Mx/zsjy27roD5K1ydRcC7uzNOhedTwhgTwgdp3xtc1y8hY8x0syPMgRjw==
+"@types/mongodb@*", "@types/mongodb@^3.5.33":
+  version "3.5.33"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.33.tgz#1084c3004a426df11b5a985641e7f58d7ceb52a6"
+  integrity sha512-biMkaYFyUP8jNczbi2BgtvVfiEtPZ+NTf+Jz4LmsQjO+Zk+kx1WNjz8gNArWlA/5DXVwMVWgIFtbj6Tslt1yWw==
   dependencies:
     "@types/bson" "*"
     "@types/node" "*"
